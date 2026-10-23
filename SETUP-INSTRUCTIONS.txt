@@ -1,0 +1,23 @@
+KAY MCCREADY NERVOUS SYSTEM RESET - SECURE MAILCHIMP INTEGRATION
+
+IMPORTANT: DO NOT DRAG-DROP THIS ZIP AS A STATIC DEPLOYMENT.
+The new signup handler is a Netlify Function, which needs a build-enabled deployment
+(e.g. a Git-connected Netlify project). A static ZIP upload will NOT run the function.
+
+1. Connect the EXISTING Netlify project to a Git repository containing these files.
+   Use the repository root as the publish directory, and netlify/functions as functions directory.
+2. In Netlify project settings > Environment variables, set:
+   MAILCHIMP_API_KEY = a newly generated Mailchimp API key (KEEP PRIVATE)
+   MAILCHIMP_AUDIENCE_ID = 8f214d2c50
+   Scope: Functions (and production deployment).
+3. Trigger a fresh deployment after saving variables.
+4. Test with a NEW email address. Check all four fields and the NS Reset - Landing Page tag in Mailchimp.
+5. Test audio player, download, and Calendly.
+
+The form will not redirect to the audio until Mailchimp confirms the contact was saved.
+Never send the API key in a chat or place it in website HTML.
+If the Netlify project is currently manual 'Dropped files', the site must first be
+connected to Git to deploy the function. This package is NOT ready for manual upload.
+
+NOTE: Mailchimp may reject a phone field if the audience has incompatible phone
+validation settings. Errors will be shown to visitors and logged in Netlify Functions.
